@@ -4,9 +4,12 @@
 //Create an object called me. Give it a key of name with the value being your name, and another key of age with the value being your age. Then alert your name using dot notation.
 
   //Code here
+  var me = {
+    name: "Hermione Granger",
+    age: 23
+  }
 
-
-
+  alert(me.name);
 
 //NEXT PROBLEM
 
@@ -15,17 +18,26 @@
 
 //Make a 'favoriteThings' object that contains the following keys: band, food, person, book, movie, holiday. Have the values to those keys be your favorite thing in that category.
 
-  //Code here
+  var favoriteThings = {
+    band: "The Weird Sisters",
+    food: "Molly Weasley's lamb chops and goat-cheese risotto",
+    person: "Ron Weasley...or sometimes my sister-in-law Ginny if he's driving me nuts",
+    book: "I CAN'T PICK JUST ONE! Hogwarts, A History, or perhaps Pride & Prejudice, a wonderful Muggle novel",
+    movie: "Wonder Woman",
+    holiday: "Christmas"
+  };
 
 
 //After you've made your object, add another key named 'car' with the value being your favorite car and then another key named 'brand' with the value being your favorite brand.
 
-  //Code here
+  favoriteThings.car = "Flying Ford Anglia";
+  favoriteThings.brand = "They'll never let me live it down but honestly, Weasly's Wizard Wheezes";
 
 
 //Now change the value of the food key in your favoriteThings object to be 'Chicken Nuggets' and change the value of the book key in your favoriteThings object to be 'Harry Potter'.
 
-  //Code here
+  favoriteThings.food = "Chicken Nuggets";
+  favoriteThings.book = "Harry Potter";
 
 
 
@@ -42,17 +54,20 @@ Set the value of that key to 'chapstick'.
 Using dot notation, add another key (or property) to your backPack object
 that is named color, with the value being the color of your backpack. */
 
-  //Code here
+  var backPack = {};
+  var item = 'firstPocket';
+  backPack[item] = 'chapstick';
+  backPack.color = 'deep sapphire blue';
 
 //After you do the above, alert your entire backPack object.
 
-  //Code here
+  alert(backPack);
 
 /*You probably noticed that it just alerted [object Object].
 Alerting to see the data in your Object doesn't work so well.
 Instead, console.log your whole backPack object and then check out the console. */
 
-  //Code here
+  console.log(backPack);
 
 
 
@@ -64,11 +79,21 @@ Instead, console.log your whole backPack object and then check out the console. 
 
 //Create an 'alsoMe' object with the following properties name, age, height, gender, married, eyeColor, hairColor. Fill those properties in with the appropriate values.
 
-  //Code Here
+  var alsoMe = {
+    name: 'Hermione Granger',
+    age: 23,
+    height: '5\'3',
+    gender: 'Female',
+    married: 'married',
+    eyeColor: 'hazel-green',
+    hairColor: 'brunette'
+  }
 
 //Now, loop through your object and alert every value. *Tyler --> 24 --> 6'0 --> Male, etc etc
 
-  //Code Here
+  for (let prop in alsoMe) {
+    alert(alsoMe[prop]);
+  }
 
 
 
@@ -80,11 +105,19 @@ Instead, console.log your whole backPack object and then check out the console. 
 
 //Create an Object called 'album' with 5 keys named different song titles that you make up, with the values being the length of each song.
 
-  //Code Here
+  var album = {
+    "You Belong With Me": "3:45",
+    "Love Story": "3:45",
+    "Only the Good Die Young": "3:45",
+    "Sweet Dreams": "3:45",
+    "Shut Up and Dance": "3:45"
+  }
 
 //Now, loop through your album object alerting every song title individually.
 
-  //Code Here
+  for (let prop in album) {
+    alert(prop);
+  }
 
 
 
@@ -96,11 +129,19 @@ Instead, console.log your whole backPack object and then check out the console. 
 
 //Create an object called states that has 5 US states as properties with the values being their population (doesn't have to be accurate).
 
-  //Code Here
+  var states = {
+    Utah: 10000,
+    Colorado: 100000,
+    Washington: 83974,
+    California: 92364787123,
+    Oregon: 23847612
+  }
 
 //Now, loop through your states object and if the states population is greater than 30K, alert that state.
 
-  //Code Here
+  for (let state in states) {
+    states[state] > 30000 ? alert(state) : 0;
+  }
 
 
 
@@ -121,11 +162,14 @@ var user1 = {
 /*Above you're given a user object. Loop through the user object checking to make sure
 that each value is truthy. If it's not truthy, remove it from the object. */
 
-  //Code Here
+  for (let prop in user1) {
+    (!user1[prop]) ? delete user1[prop] : 0;
+  }
 
 //Once you get your truthy Object, Change the remaining values in the object to be specific to you (name: 'your name', username: 'your username'), rather than my information.
 
-  //Code Here
+  user1.name = "Jysn Erso";
+  user1.username = "Stardust";
 
 
 
@@ -149,11 +193,12 @@ var user2 = {
 //Let's say I, the user, decided to change my name and email address to the following
 // name -> 'Tyler S. McGinnis', email -> 'tyler.mcginnis@devmounta.in'. Make that change.
 
-  //Code Here
+  user2.name = 'Tyler S. McGinnis';
+  user2.email = 'tyler.mcginnis@devmounta.in';
 
 //Now call the sayEmail method that's on the user object which will alert the users email
 
-  //Code Here
+  user2.sayEmail();
 
 
 
@@ -165,17 +210,19 @@ var user2 = {
 
 //Create an empty object called methodCollection.
 
-  //Code Here
+  var methodCollection = {};
 
 /*Now add two methods (functions that are properties on objects) to your methodCollection
 object. One called 'alertHello' which alerts 'hello' and another method called logHello
  which logs 'hello' to the console. */
 
-  //Code Here
+  methodCollection.alertHello = () => alert('hello');
+  methodCollection.logHello = () => console.log('hello');
 
 //Now call your alertHello and logHello methods.
 
-  //Code Here
+  methodCollection.alertHello();
+  methodCollection.logHello();
 
 
 
@@ -186,7 +233,12 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
 // Create a function called makePerson which takes in name, birthday, ssn as its
 // parameters and returns a new object with all of the information that you passed in.
 
-  //Code Here
+  var makePerson = (name, birthday, ssn) => {
+    return {"name": name, 
+            "birthday": birthday, 
+            "ssn": ssn
+          };
+  };
 
 
 
@@ -196,7 +248,12 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
 
 // Create a function called makeCard which takes in cardNumber, expirationDate, and securityCode to make a Credit Card object and returns that object so that whenever you invoke makeCard, you get a brand new credit card.
 
-  //Code Here
+  var makeCard = (cardNumber, expirationDate, securityCode) => {
+    return {"cardNumber": cardNumber, 
+            "expirationDate": expirationDate, 
+            "securityCode": securityCode
+          };
+  };
 
 
 
@@ -209,4 +266,13 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
    Have bindCard merge the two parameters together into a new object which contains all the properties from the person as well as the creditcard. While Object.assign would give you the answer, specRunner requires an answer without using it.
 */
 
-  //Code Here
+  var bindCard = (person, creditcard) => {
+    var newObj = {};
+    for (let prop in person) {
+      newObj[prop] = person[prop];
+    }
+    for (let prop in creditcard) {
+      newObj[prop] = creditcard[prop];
+    }
+    return newObj;
+  }
